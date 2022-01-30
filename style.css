@@ -1,0 +1,56 @@
+body{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: linear-gradient(rgb(222, 217, 250), rgb(121, 121, 167));
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px;
+    margin: 12px;
+}
+
+
+.popUp{
+    position: fixed;
+    top: 50%;
+    left: 50%;                  /* top-left of the div at center of page*/
+    transform:translate(-50%, -50%);     /* pushes the div to center of page by shift by 50% of it's dimension */
+
+    z-index: 10;
+}
+
+.addBtn{
+    font-family:cursive;
+    width: auto;
+    font-size: 1.5rem;
+    background-color: blueviolet;
+    padding: 8px;
+    border: 2px solid gray;
+    border-radius: 8%;
+
+    box-shadow: grey;
+    color: lavenderblush;
+    text-align: center;
+}
+
+.addBtn:hover{
+    width: 130px;
+    height: 32px;
+    
+
+    cursor: pointer;
+}
+
+.libContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
