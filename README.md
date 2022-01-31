@@ -12,3 +12,13 @@
 - isNaN(), parseInt()-> return NaN if not a number
 
 - client side form validation, along with frontend event to accept input(and close form)  or stay on same state( just return from the event )
+
+- set data attribute using JS, and the dataset property
+
+
+________________________________________________________
+
+# to implement:
+- localStorage
+- deleteBook
+- toggle read/unread
