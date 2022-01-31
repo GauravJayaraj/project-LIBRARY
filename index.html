@@ -7,34 +7,41 @@
     <title>Library</title>
 
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="header">
         <div class="addBtn">ADD BOOK</div>
     </div>
     <div class="libContainer">
+        
+    </div>
 
+    <div class="overLay">
+        <div class="popUp">
+            <form action="" method="">
+                <div class="ipSec">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="ipSec">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author" required>
+                </div>
+                <div class="ipSec">
+                    <label for="pages">number of pgs:</label>
+                    <input type="number" id="pages" name="pages" min=0 required>
+                </div>
+                <div class="ipSec">
+                    <input type="checkbox" id="read">
+                    <label for="read">Read</label>
+                </div>
+                <button type="submit" id="subInfo">submit</button>
+                <button type="button" id="close">close</button>
+            </form>
+        </div>
     </div>
-    <div class="popUp">
-        <form action="" method="post">
-            <div class="ipSec">
-                <label for="title">Title:</label>
-                <input type="text" id="title" name="title">
-            </div>
-            <div class="ipSec">
-                <label for="author">Author:</label>
-                <input type="text" id="author" name="author">
-            </div>
-            <div class="ipSec">
-                <label for="pages">Title:</label>
-                <input type="text" id="pages" name="pages">
-            </div>
-            <div class="ipSec">
-                <input type="checkbox">
-                <label for="title">Read</label>
-            </div>
-            <button type="submit">submit</button>
-        </form>
-    </div>
+    
+    
 </body>
 </html>
