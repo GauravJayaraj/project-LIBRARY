@@ -13,7 +13,7 @@
 
 - client side form validation, along with frontend event to accept input(and close form)  or stay on same state( just return from the event )
 
-- set data attribute using JS, and the dataset property
+- set data attribute using JS, the dataset property
 
 
 ________________________________________________________
