@@ -104,3 +104,10 @@ form{
 
     padding: 10px;
 }
+
+
+.curHover:hover{
+    cursor: pointer;
+    background-color: chartreuse;
+    color: darkblue;
+}

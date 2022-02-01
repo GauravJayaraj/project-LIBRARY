@@ -26,6 +26,19 @@ function Book(title, author, numPages, readBefore) {
 function addBookToLibrary(book) {
   // do stuff here
     myLibrary.push(book);
+
+    // save current form in local store
+    localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
+}
+
+
+function removeBookFromLibrary(delIdx){
+
+    // inpace delete
+    myLibrary.splice(delIdx, 1);
+
+    // save current form in local store
+    localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
 }
 
 
@@ -73,6 +86,20 @@ function createBookCard(book){
         h5_read.innerHTML = 'read';
     else    
         h5_read.innerHTML = 'yet to read';
+    
+    // TOGGLE READ?UNREAD
+    h5_read.classList.add('curHover');
+    h5_read.addEventListener('click', (event)=>{
+        let content = h5_read.innerHTML;
+        if(content=='read'){
+            h5_read.innerHTML = 'yet to read';
+        }
+        else{
+            h5_read.innerHTML = 'read';
+        }
+
+        event.stopPropagation(); // don't popogate event upto card
+    })
 
     mybook.appendChild(h5_read);
 
@@ -86,12 +113,24 @@ function createBookCard(book){
 }
 
 function displayLibrary(){
+    
+    if(myLibrary.length==0 && localStorage.getItem('myLibrary')==null){
+        return;
+    }
+    else if(myLibrary.length==0 && localStorage.getItem('myLibrary')!=null){
+        
+        // get previous State of library
+        let retrievedData = localStorage.getItem('myLibrary');
+        myLibrary = JSON.parse(retrievedData);
+    }
+    
     // clear old display
-
     while(libContainer.firstChild){
         libContainer.removeChild(libContainer.lastChild);
     }
     
+
+    // Associate index with book card in frontend
     myLibrary.forEach((book, index)=>{
         let bookCard = createBookCard(book);
         // set data attribute so we can toggle read and unread
@@ -100,6 +139,24 @@ function displayLibrary(){
 
         libContainer.appendChild(bookCard);
     })
+
+
+    // DELETE OPERATION
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach((card)=>{
+        const button = card.querySelector('button');
+
+        button.addEventListener('click', ()=>{
+            const delIdx = card.getAttribute('data-booknum');
+
+            // inplace del in array
+            removeBookFromLibrary(delIdx);
+
+            // remove from DOM tree, as a child of the libContainer
+            libContainer.removeChild(card);
+        });
+    });
 }
 
 
@@ -121,7 +178,9 @@ subInfo.addEventListener('click', (event)=>{
     
     
     let book = new Book(form.title.value, form.author.value, form.pages.value, form.read.checked);
+    
     addBookToLibrary(book);
+
 
     
     removePopUp();
@@ -134,6 +193,9 @@ closeBtn.addEventListener('click', ()=>{
     removePopUp();
     displayLibrary();
 })
+
+
+
 
 
 
