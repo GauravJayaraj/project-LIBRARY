@@ -94,6 +94,50 @@ form{
     color:rgb(222, 217, 250);
 }
 
+input[type='text'],
+input[type='number']{
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    width: 100%;
+    padding: 7px;
+    margin: 10px;
+    font-size: 1rem;
+}
+
+input[type='checkbox'] {
+    margin: 10px;
+}
+
+label{
+    font-size: 1.2rem;
+}
+
+.ipBtns{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 8px;
+}
+
+.ipBtns button{
+    font-size: 16px;
+    font-weight: bold;
+  
+    color: #FFFFFF;
+    background-color: #5995DA;
+  
+    border: none;
+    border-radius: 3px;
+  
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+.ipBtns button:hover {
+    background-color: #76AEED;
+}
+
 
 .card{
     border: 2px solid black;
@@ -111,3 +155,4 @@ form{
     background-color: chartreuse;
     color: darkblue;
 }
+
