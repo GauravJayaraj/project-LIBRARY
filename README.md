@@ -51,3 +51,4 @@ ____________________________________________________
 ## to implement:
 
 - edit option
+    - in class version might need async or need new separated popup form for edit
